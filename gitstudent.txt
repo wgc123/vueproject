@@ -1,0 +1,32 @@
+git 第一次把本地文件提交到GitHub
+地址
+https://baijiahao.baidu.com/s?id=1619544681032320225&wfr=spider&for=pc
+第一步：建立git仓库
+新建一个本地仓库，其实也就是新建一个文件夹。最简单的创建方式就是直接在桌面鼠标右键，
+新建文件夹(test)，然后进去该文件夹。鼠标右键，打开git -> Git Bash Here -> git init。
+执行命令后目录下创建一个.git文件夹。
+
+git init
+
+
+第二步：添加需要上传到github的代码到本地仓库如何添加，首先将需要上传的代码复制粘贴到本地仓库，
+也就是test文件夹。然后git status，这时候会发现多了一些东西，这些东西就是你刚刚复制进来的文件，
+显示为红色，就是待添加到本地仓库的意思
+git status
+
+第三步：将项目的所有文件添加到仓库中
+git add a.txt  (添加整个项目  git add .)
+
+第四步：将add的文件commit到仓库
+git commit -m "第一次提交"
+
+第五步：去github上创建自己的Repository(项目名)
+点击Create repository，一步一步执行下去即可，创建成功后拿到创建的仓库的https地址
+
+第六步：将本地的仓库关联到github上
+git remote add origin 地址
+
+第七步，上传代码到github远程仓库
+git pull --rebase origin master
+
+git push -u origin master 上传到GitHub
