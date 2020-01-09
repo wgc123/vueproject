@@ -72,6 +72,16 @@
 
     <h5 v-show="isShow">{{showmessage}}</h5>
 
+    <hr>
+
+    <!-- v-model -->
+
+
+
+
+
+
+
     <router-link to="/book">
       <button>下一页</button>
     </router-link>
