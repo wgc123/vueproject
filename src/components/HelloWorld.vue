@@ -1,7 +1,7 @@
 <template>
   <!-- v-cloak 解析vue之前显示还是隐藏 -->
   <div class="hello" v-cloak>
-    <ul >
+    <ul>
       <li v-for="stu in list" :key="stu.id">{{stu}}</li>
     </ul>
 
@@ -39,7 +39,7 @@
     <ul>
       <li v-for="book in books" :key="book.id">{{book.name}} --{{book.price}}</li>
     </ul>
-     
+
     <h5>就算图书总价格：{{totalPrice}}</h5>
 
     <h5>这是一个get、set的计算属性 {{fullName}}</h5>
@@ -56,28 +56,25 @@
       <input type="text" id="email" placeholder="用户邮箱" />
     </span>
     <button @click="isUser = !isUser">切换登录</button>
-    <br>
+    <br />
 
-<!-- key 值不一样，在切换登录的时候就不会把user input值传给 email input 就会清空-->
+    <!-- key 值不一样，在切换登录的时候就不会把user input值传给 email input 就会清空-->
     <span v-if="isUser">
       <label for="userName">用户账号</label>
       <input type="text" id="userName" placeholder="用户账号" key="userName" />
     </span>
     <span v-else>
       <label for="email">用户邮箱</label>
-      <input type="text" id="email" placeholder="用户邮箱" key="email"/>
+      <input type="text" id="email" placeholder="用户邮箱" key="email" />
     </span>
     <button @click="isUser = !isUser">切换登录</button>
-  <hr>
+    <hr />
 
-   <h5 v-show="isShow">{{showmessage}}</h5>
-     
-     <button @click="btnNext()">下一页</button>
+    <h5 v-show="isShow">{{showmessage}}</h5>
 
-  <router-link to='book'>
-    <button>下一页</button>
+    <router-link to="/book">
+      <button>下一页</button>
     </router-link>
-
   </div>
 </template>
 
@@ -86,7 +83,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      showmessage:'v-show 条件判断',
+      showmessage: "v-show 条件判断",
       isShow: true,
       isUser: true,
       firstName: "继续",
@@ -140,9 +137,6 @@ export default {
     },
     getStyle: function() {
       return { fontSize: this.finalSize, backgroundColor: this.finalColor };
-    },
-    btnNext(){
-      this.$router.push('book');
     }
   },
   watch: {
