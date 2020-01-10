@@ -1,6 +1,33 @@
 # vueproject
 Vue学习笔记
 
+安装vue环境
+1、必须要安装nodejs
+
+2、搭建vue的开发环境 ，安装vue的脚手架工具   官方命令行工具
+
+npm install --global vue-cli  /   cnpm install --global vue-cli         （此命令只需要执行一次）
+
+
+创建vue项目
+
+vue init webpack vue-demo01
+
+cd  vue-demo01 
+
+cnpm install   /  npm install如果创建项目的时候没有报错，这一步可以省略。如果报错了  cd到项目里面运行  cnpm install   /  npm install
+		
+npm run dev  运行
+
+代码监测报错
+
+/*jshint esversion: 6 */
+
+(function() {　　
+    "use strict";　　 // some code here
+})();
+
+
 1月8号学习vue总结：
 
   指令：v-on  绑定点击事件
@@ -37,4 +64,16 @@ Vue学习笔记
   toFixed 保留小数  toFixed(2)保存两位小数
   
   v-model使用
+  v-model修饰符 
+    1.lazy 可以让数据在失去焦点或者回车时才会更新；
+	2.number 可以在输入框中输入的内容自动转成数字类型；
+	     typeof 获取类型
+	3.trim 过滤内容左右两边的内容
+	
+	
+	组件化开发
+	  注册组件 
+	  1.调用vue.extend()方法创建组件构造器
+	  2.调用vue.component()方法注册组件
+	  3.在vue范围使用组件
   
