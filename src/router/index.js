@@ -10,10 +10,14 @@ Router.prototype.push = function push(location) {
 };
 import HelloWorld from '@/components/HelloWorld';
 import Books from '@/components/Books';
+import Comm from '@/components/Comm';
 
 
 export default new Router({
     routes: [{
+            path: '/comm',
+            component: Comm
+        }, {
             path: '/hello',
             component: HelloWorld
         },

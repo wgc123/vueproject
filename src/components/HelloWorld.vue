@@ -72,16 +72,81 @@
 
     <h5 v-show="isShow">{{showmessage}}</h5>
 
-    <hr>
+    <hr />
 
     <!-- v-model -->
+    <h5>{{modelmessage}}</h5>
+    <!-- 第一种通过v-model绑定双向数据 -->
+
+    <input type="text" v-model="modelmessage" />
+
+<br>
+
+<!-- 第二种 通过方法event事件改变数据 -->
+   <input type="text"  :value="modelmessage" v-on:input="valueChage">
 
 
+<hr>
 
+<h5>{{raidomessage}}</h5>
+<!-- 选择男、女 关键要设置他们相互互斥，不然单选按钮就可以选择多个 -->
+<label for="male">
+  <input type="radio" id="male" name="sex" value="男" v-model="sex">男
+</label>
+<label for="female">
+  <input type="radio" id="female" name="sex" value="女" v-model="sex">女
+</label>
+<h5>你选择的性别为：{{sex}}</h5>
 
+<hr>
 
+<h5>{{checkboxmessage}}</h5>
+<!-- 单选checkbox按钮 -->
+<label for="agree">
+  <input type="checkbox" id="agree"  v-model="isAgree" >同意协议
+</label>
 
+<h5>你是否选择同意协议：{{isAgree}}</h5>
+<!-- disabled 不可点击  只有当点击同意协议的时候才可以点击下一步  所以取反 -->
+<button :disabled="!isAgree">下一步</button>
+<br>
+<!-- 多选按钮 -->
+<input type="checkbox" value="苹果" v-model="checkboxArr">苹果
+<input type="checkbox" value="香蕉" v-model="checkboxArr">香蕉
+<input type="checkbox" value="芒果" v-model="checkboxArr">芒果
+<input type="checkbox" value="哈密瓜" v-model="checkboxArr">哈密瓜
 
+<h5>你的喜欢的水果有：{{checkboxArr}}</h5>
+
+<hr>
+<h5>{{selectmessage}}</h5>
+<select name="abc" v-model="fruit">
+  <option value="苹果">苹果</option>
+  <option value="香蕉">香蕉</option>
+  <option value="芒果">芒果</option>
+  <option value="哈密瓜">哈密瓜</option>
+</select>
+<h5>单选 你选择的水果是：{{fruit}}</h5>
+
+<!-- multiple 多选 -->
+<select name="abc" v-model="fruits" multiple>
+  <option value="苹果">苹果</option>
+  <option value="香蕉">香蕉</option>
+  <option value="芒果">芒果</option>
+  <option value="哈密瓜">哈密瓜</option>
+</select>
+<h5>多选 你选择的水果是：{{fruits}}</h5>
+
+<br>
+
+<h5>{{inputmessage}}</h5>
+<!-- 值绑定CheckBox  -->
+<label v-for="item in inputCheckbox" :key="item.id" :for="item">
+  <input type="checkbox"  :value="item" :id="item" v-model="fruits">{{item}}
+</label>
+
+    <br />
+    <br />
     <router-link to="/book">
       <button>下一页</button>
     </router-link>
@@ -93,6 +158,18 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      inputmessage:'input 值绑定',
+      inputCheckbox:['11','22','33','44'],
+      selectmessage: 'select 结合v-model使用',
+      fruit:'香蕉',
+      fruits:[],
+
+      checkboxmessage:'checkbox 结合v-model使用',
+      isAgree: false,   // 是否同意协议
+      checkboxArr:[], //保存喜欢的水果
+      raidomessage:'v-model结合raido使用单选按钮',
+      sex:'男',
+      modelmessage: "v-model 双向数据绑定",
       showmessage: "v-show 条件判断",
       isShow: true,
       isUser: true,
@@ -147,6 +224,9 @@ export default {
     },
     getStyle: function() {
       return { fontSize: this.finalSize, backgroundColor: this.finalColor };
+    },
+    valueChage(event){
+      this.modelmessage = event.target.value;
     }
   },
   watch: {
