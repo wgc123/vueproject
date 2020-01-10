@@ -45,6 +45,10 @@
     <router-link to="/hello">
       <button>上一页</button>
     </router-link>
+
+    <router-link to="/comm">
+      <button>下一页</button>
+    </router-link>
   </div>
 </template>
 
