@@ -76,4 +76,17 @@ npm run dev  运行
 	  1.调用vue.extend()方法创建组件构造器
 	  2.调用vue.component()方法注册组件
 	  3.在vue范围使用组件
+	  
+	路由跳转
+	 this.$router.push('/')
+	 this.$router.replace('/')
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
   
