@@ -9,6 +9,8 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 2、搭建vue的开发环境 ，安装vue的脚手架工具   官方命令行工具
 
 npm install -g @vue/cli  /   cnpm install -g @vue/cli         （此命令只需要执行一次）
+如果更高的版本想用2.x的版本通过命令：
+npm install -g @vue/cli-init
 
 
 创建vue项目
