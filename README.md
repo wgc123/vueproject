@@ -3,10 +3,12 @@ Vue学习笔记
 
 安装vue环境
 1、必须要安装nodejs
+安装淘宝镜像：
+npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 2、搭建vue的开发环境 ，安装vue的脚手架工具   官方命令行工具
 
-npm install --global vue-cli  /   cnpm install --global vue-cli         （此命令只需要执行一次）
+npm install -g @vue/cli  /   cnpm install -g @vue/cli         （此命令只需要执行一次）
 
 
 创建vue项目
