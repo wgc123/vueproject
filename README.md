@@ -129,6 +129,23 @@ npm run dev  运行
 	
 	keep-alive
 	记住某一个状态打开不被返回可使用导航守卫
+	
+	别名（可快速找到资源、组件）
+	 buid文件下webpack.base.conf.js
+	 
+	  resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': resolve('src'),
+            'assets': resolve('src/assets'),
+            'components': resolve('src/components'),
+            'views': resolve('src/views'),
+
+        }
+    },
+	
+	src使用前面必须加~ （<img src = "~assets/img/img2-actived.png">）
 	 
 		
 	
