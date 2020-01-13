@@ -120,6 +120,9 @@ export default {
     showPrice(price) {
       return "￥" + price.toFixed(2);
     }
+  },
+   created(){
+    document.title = '图书';
   }
 };
 </script>

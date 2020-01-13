@@ -14,3 +14,6 @@ new Vue({
     components: { App },
     template: '<App/>'
 });
+
+// 暴露样式 引用自定义样式 不建议
+// require('./assets/css/base.css');

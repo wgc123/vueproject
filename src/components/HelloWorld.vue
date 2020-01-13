@@ -200,6 +200,7 @@ export default {
   created: function() {
     // 主要用于网络请求
     console.log("created");
+    document.title = '首页';
   },
   mounted: function() {
     console.log("mounted");

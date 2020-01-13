@@ -81,9 +81,57 @@ npm run dev  运行
 	  2.调用vue.component()方法注册组件
 	  3.在vue范围使用组件
 	  
-	路由跳转
-	 this.$router.push('/')
-	 this.$router.replace('/')
+	页面跳转：
+	   router-link to:''
+	  
+	路由跳转：
+	  1.this.$router.push('/')
+	  2.this.$router.replace('/')
+	  
+	路由懒加载：
+	 const HelloWorld = () => import ('../components/HelloWorld');
+	 
+	路由嵌套使用：
+	   //路由嵌套
+            children: [{
+                    path: 'news',
+                    component: CommNews
+                },
+                {
+                    path: 'message',
+                    component: CommMessage
+                }
+            ]
+	
+	路由传参（params和query）：
+	  1.params的类型：
+	    配置路由格式：/router/:id
+		传递的方式：在path后面跟上对应的值
+		传递后形成的路劲：/router/123,/router/adb
+		使用：
+	  2.query的类型：
+	    配置路由格式：/router 也就是普通配置
+		传递的方式：对象中使用query的key作为传递方式
+		传递后形成的路劲：/router?id=123
+		使用：
+		<!-- :to 绑定  对象：第一个参数：跳转  第二个参数：query对象里面要传递的查询参数 -->
+		<router-link :to="{path:'me',query:{name:'张三',age:17}}">query 路由传参</router-link>
+	   3.路由query接受传递过来的参数：
+	     $route.query.name
+		 $route.query.age
+		 
+    导航守卫（显示在浏览器上当前路由在哪一个title）
+	    created: function() {
+           // 主要用于网络请求
+          console.log("created");
+          document.title = '首页';
+        },
+	
+	keep-alive
+	记住某一个状态打开不被返回可使用导航守卫
+	 
+		
+	
 	 
 	 
 	 
