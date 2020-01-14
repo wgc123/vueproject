@@ -146,6 +146,87 @@ npm run dev  运行
     },
 	
 	src使用前面必须加~ （<img src = "~assets/img/img2-actived.png">）
+	
+	
+	promise(异步) 异步编程的一种解决方案
+	 使用场景：有异步操作、网络请求
+	 
+	 setTimeout(() => {
+        
+      }, 1000);
+	  
+	  new ->构造函数（1.保存状态信息 2.执行传入的函数）
+	 // resolve 成功  reject失败
+     new Promise((resolve,reject) =>{
+       setTimeout(() => {
+         //成功的时候调用
+         resolve();
+
+
+         //失败的时候调用
+        //  reject();
+       }, 1000);
+
+     }).then(() =>{
+       // 成功的时候调用then 
+     }).catch((err) =>{
+       //错误的时候捕获异常
+     })
+	
+	vuex(共享数据) 状态管理模式
+	
+	基本使用：
+	  1.引入vuex   npm install vuex --save
+	  2.新建文件夹 store
+	  3.新建文件 store/index.js
+	  4.index.js：
+	    import Vue from 'vue';
+        import Vuex from 'vuex';
+
+         Vue.use(Vuex);
+
+         const store = new Vuex.Store({
+            state: {
+               counter: 100
+            },
+            mutations: {
+              // 方法
+              increment(state) {
+                state.counter++;
+               },
+              //
+             decrement(state) {
+               state.counter--;
+               }
+            },
+          actions: {},
+          getters: {},
+           modules: {}
+         });
+
+        export default store;
+		
+		5.在main.js中引入store
+		 import store from './store';
+		 new Vue({
+          el: '#app',
+          router,
+          store,
+          components: { App },
+          template: '<App/>'
+         });
+		 
+		 6.拿到conter值
+		 $store.state.counter
+		 7.改变store中定义conter值
+		  this.$store.commit('increment');
+		  
+		  
+	网络请求axios
+	http://123.207.32.32:8000/home/multidata
+	http://123.207.32.32:8000/home/data?type=sell&page=1
+	
+	
 	 
 		
 	

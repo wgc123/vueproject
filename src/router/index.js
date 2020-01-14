@@ -46,6 +46,9 @@ const Shopcart = () =>
 const Profile = () =>
     import ('../views/profile/Profile');
 
+const More = () =>
+    import ('../views/more/More');
+
 
 export default new Router({
     routes: [{
@@ -67,6 +70,10 @@ export default new Router({
         {
             path: '/profile',
             component: Profile
+        },
+        {
+            path: '/more',
+            component: More
         },
 
 
